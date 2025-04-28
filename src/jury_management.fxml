@@ -10,7 +10,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="616.0" prefWidth="753.0" stylesheets="styles/jury_management.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JuryManagementController">
+<AnchorPane prefHeight="616.0" prefWidth="867.0" stylesheets="@styles/jury_management.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JuryManagementController">
     <children>
         <!-- Title Section -->
         <Label fx:id="titleLabel" layoutX="10.0" layoutY="10.0" text="Jury Management" />
@@ -19,7 +19,7 @@
         <TableView fx:id="juryTable" layoutX="11.0" layoutY="50.0" prefHeight="212.0" prefWidth="195.0">
             <columns>
                 <TableColumn fx:id="juryIdColumn" text="Jury ID" />
-                <TableColumn fx:id="juryNameColumn" prefWidth="93.60004425048828" text="Jury Name" />
+                <TableColumn fx:id="juryNameColumn" prefWidth="93.6" text="Jury Name" />
             </columns>
         </TableView>
 
@@ -33,6 +33,7 @@
         <Button fx:id="addJuryButton" layoutX="216.0" layoutY="137.0" onAction="#handleAddJury" prefHeight="26.0" prefWidth="170.0" text="Ajouter Jury" />
         <Button fx:id="updateJuryButton" layoutX="216.0" layoutY="183.0" onAction="#handleUpdateJury" prefHeight="26.0" prefWidth="170.0" text="Modifier Jury" />
         <Button fx:id="viewMembersButton" layoutX="215.0" layoutY="236.0" onAction="#handleViewMembers" prefHeight="26.0" prefWidth="170.0" text="Voir Members" />
+        <Button fx:id="deleteJuryButton" layoutX="216.0" layoutY="280.0" onAction="#handleDeleteJury" prefHeight="26.0" prefWidth="170.0" text="Supprimer Jury" />
 
         <!-- Jury Members Section -->
         <Label layoutX="20.0" layoutY="290.0" text="Jury Members" />
@@ -47,14 +48,13 @@
         <!-- Member Input Fields -->
         <Label layoutX="433.0" layoutY="327.0" text="Encadrant:" />
         <ComboBox fx:id="encadrantComboBox" layoutX="556.0" layoutY="323.0" prefWidth="170.0" promptText="Select Encadrant" />
-
         <Label layoutX="433.0" layoutY="367.0" text="Role:" />
         <ComboBox fx:id="roleComboBox" layoutX="556.0" layoutY="363.0" prefWidth="170.0" promptText="Select Role" />
-
         <Button fx:id="addMemberFromFieldsButton" layoutX="433.0" layoutY="403.0" onAction="#handleAddMemberFromFields" prefHeight="26.0" prefWidth="133.0" text="Ajouter Member" />
         <Button fx:id="removeMemberButton" layoutX="577.0" layoutY="403.0" onAction="#handleRemoveMember" prefHeight="26.0" prefWidth="170.0" text="Supprimer Member" />
+        <Button fx:id="modifyMemberButton" layoutX="433.0" layoutY="450.0" onAction="#handleModifyMember" prefHeight="26.0" prefWidth="133.0" text="Modifier Member" />
 
-        <ImageView fitHeight="259.0" fitWidth="262.0" layoutX="500.0" layoutY="34.0">
+        <ImageView fitHeight="259.0" fitWidth="262.0" layoutX="567.0" layoutY="37.0">
             <image>
                 <Image url="@styles/image-removebg-preview%20(3).png" />
             </image>

@@ -57,8 +57,37 @@ public class DocumentManagementController {
 
     private void loadProjects() {
         try {
+            // Fetch all projects from the database
             List<Projet> projects = ProjetDAO.getAllProjects();
+
+            // Set the projects in the ComboBox
             projectComboBox.setItems(FXCollections.observableArrayList(projects));
+
+            // Use a custom cell factory to display project titles
+            projectComboBox.setCellFactory(comboBox -> new ListCell<Projet>() {
+                @Override
+                protected void updateItem(Projet projet, boolean empty) {
+                    super.updateItem(projet, empty);
+                    if (empty || projet == null) {
+                        setText(null);
+                    } else {
+                        setText(projet.getTitre()); // Display the project title
+                    }
+                }
+            });
+
+            // Set the displayed value in the ComboBox
+            projectComboBox.setButtonCell(new ListCell<Projet>() {
+                @Override
+                protected void updateItem(Projet projet, boolean empty) {
+                    super.updateItem(projet, empty);
+                    if (empty || projet == null) {
+                        setText(null);
+                    } else {
+                        setText(projet.getTitre()); // Display the project title
+                    }
+                }
+            });
         } catch (SQLException e) {
             showError("Erreur", "Impossible de charger les projets : " + e.getMessage());
         }
@@ -102,13 +131,13 @@ public class DocumentManagementController {
     private void handleExportToPdf() {
         DocumentAdministratif selectedDocument = documentTable.getSelectionModel().getSelectedItem();
         if (selectedDocument == null) {
-            showError("Erreur", "Veuillez sélectionner un document à exporter !");
+            showError("Erreur", "Veuillez selectionner un document à exporter !");
             return;
         }
 
         try {
             PdfExporter.exportDocumentToPdf(selectedDocument);
-            showInfo("Succès", "Document exporté en PDF avec succès !");
+            showInfo("Succes", "Document exporte en PDF avec succes !");
         } catch (Exception e) {
             showError("Erreur", "Impossible d'exporter le document : " + e.getMessage());
         }

@@ -90,7 +90,7 @@ public class ProjetManagementController {
             // Reload the projects and reset the form
             loadProjets();
             clearFields();
-            showInfo("Projet ajouté avec succès ! ID: " + id);
+            showInfo("Projet ajoute avec succes ! ID: " + id);
         } catch (SQLException e) {
             showError("Erreur lors de l'ajout du projet : " + e.getMessage());
         }
@@ -165,7 +165,7 @@ public class ProjetManagementController {
                 loadProjets(); // Reload the projects
                 projetTable.refresh(); // Refresh the TableView to reapply the cell factory
                 resetToAddMode();
-                showInfo("Projet mis à jour avec succès !");
+                showInfo("Projet mis à jour avec succes !");
             } catch (SQLException e) {
                 showError("Erreur lors de la mise à jour du projet : " + e.getMessage());
             }
@@ -180,7 +180,7 @@ public class ProjetManagementController {
             // Reload the projects and refresh the table
             loadProjets();
             projetTable.refresh();
-            showInfo("Projet supprimé avec succès !");
+            showInfo("Projet supprime avec succes !");
         } catch (SQLException e) {
             showError("Erreur lors de la suppression du projet : " + e.getMessage());
         }

@@ -29,11 +29,6 @@
                         <Image url="@styles/Login-amico.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="185.0" layoutY="387.0" prefHeight="20.0" prefWidth="116.0" text="Ou Creer Compte" textFill="#b4b6d1">
-                     <font>
-                        <Font name="System Bold Italic" size="14.0" />
-                     </font>
-                  </Label>
                </children>
             </AnchorPane>
             <Label layoutX="61.0" layoutY="141.0" prefHeight="20.0" prefWidth="126.0" text="nom d'utilisateur :" textFill="WHITE">
@@ -58,6 +53,7 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
+                <Button fx:id="signUpButton" layoutX="180.0" layoutY="365.0" onAction="#handleSignUpNavigation" prefWidth="138.0" text="Ou Creer Compte" />
             </children>
         </Pane>
     </children>
