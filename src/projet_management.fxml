@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane stylesheets="@styles/projet_management.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProjetManagementController">
+    <!-- Left Filter Section -->
+    <left>
+        <AnchorPane fx:id="filterPane" prefWidth="300" style="-fx-background-color: #373160;">
+            <children>
+                <Label fx:id="filterLabel" layoutX="20.0" layoutY="20.0" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" text="Filtrer :" />
+                <TextField fx:id="filterIdField" layoutX="20.0" layoutY="60.0" prefWidth="250.0" promptText="ID Projet" />
+                <TextField fx:id="filterTitleField" layoutX="20.0" layoutY="100.0" prefWidth="250.0" promptText="Titre Projet" />
+                <Button fx:id="clearFiltersButton" layoutX="20.0" layoutY="140.0" onAction="#clearFilters" prefWidth="100.0" text="Annuler" />
+            </children>
+        </AnchorPane>
+    </left>
+
+    <!-- Center Table Section -->
+    <center>
+        <AnchorPane fx:id="tablePane" style="-fx-padding: 20;">
+            <children>
+                <TableView fx:id="projetTable" layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="760.0">
+                    <columns>
+                        <TableColumn fx:id="idColumn" text="ID" />
+                        <TableColumn fx:id="titleColumn" text="Titre" />
+                        <TableColumn fx:id="descriptionColumn" text="Description" />
+                        <TableColumn fx:id="actionsColumn" text="Actions" />
+                    </columns>
+                </TableView>
+
+                <!-- Input fields for adding a new project -->
+                <AnchorPane layoutX="20.0" layoutY="240.0" prefHeight="150.0" prefWidth="760.0">
+                    <children>
+                        <TextField fx:id="titleField" layoutX="20.0" layoutY="20.0" prefWidth="200.0" promptText="Titre Projet" />
+                        <TextField fx:id="descriptionField" layoutX="240.0" layoutY="20.0" prefWidth="200.0" promptText="Description" />
+                        <Button fx:id="addProjetButton" layoutX="20.0" layoutY="70.0" prefWidth="100.0" text="Ajouter" />
+                        <Button fx:id="updateProjetButton" layoutX="140.0" layoutY="70.0" prefHeight="30.0" prefWidth="129.0" text="Mettre à jour" visible="false" />
+                        <Button fx:id="cancelUpdateButton" layoutX="298.0" layoutY="70.0" prefHeight="30.0" prefWidth="133.0" text="Annuler" visible="false" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

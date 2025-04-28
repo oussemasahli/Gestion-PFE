@@ -1,0 +1,67 @@
+AnchorPane {
+    -fx-background-color: #b2acdb; /* Light purple background */
+}
+
+#titleLabel {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-padding: 10;
+}
+
+/* TableView Styling */
+TableView {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 10;
+}
+
+TableColumn {
+    -fx-alignment: center-left;
+    -fx-font-size: 14px;
+}
+
+/* Button Styling */
+Button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10;
+    -fx-background-color: #373160; /* Updated background color */
+    -fx-text-fill: white; /* Updated text color */
+}
+
+Button:hover {
+    -fx-background-color: #5a5190; /* Slightly lighter color on hover */
+}
+
+#addJuryButton {
+    -fx-background-color: #373160; /* Updated background color */
+    -fx-text-fill: white;
+}
+
+#addJuryButton:hover {
+    -fx-background-color: #413a6e; /* Updated background color */
+}
+
+#updateJuryButton {
+    -fx-background-color: #373160; /* Updated background color */
+    -fx-text-fill: white;
+}
+
+
+
+/* TextField Styling */
+TextField {
+    -fx-pref-width: 200px;
+    -fx-pref-height: 30px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+TextField:focused {
+    -fx-background-color: #544c85; /* Updated background color */
+}

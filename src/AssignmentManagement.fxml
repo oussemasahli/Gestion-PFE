@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@styles/assignmentManagement.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AssignmentManagementController">
+    <!-- Top Section: Title -->
+    <top>
+        <Label text="Assignment Management" />
+    </top>
+
+    <!-- Left Section: Filter -->
+    <left>
+        <VBox prefWidth="300" spacing="15">
+            <Label text="Filter Assignments" />
+            <TextField fx:id="studentFilterField" onKeyReleased="#handleFilterAssignments" promptText="Filter by Student ID" />
+            <TextField fx:id="projectFilterField" onKeyReleased="#handleFilterAssignments" promptText="Filter by Project ID" />
+            <Button onAction="#handleClearFilters" text="Clear Filters" />
+        </VBox>
+    </left>
+
+    <!-- Center Section: TableView -->
+    <center>
+        <TableView fx:id="assignmentTable">
+            <columns>
+                <TableColumn fx:id="studentColumn" prefWidth="200" text="Student ID" />
+                <TableColumn fx:id="projectColumn" prefWidth="200" text="Project ID" />
+            </columns>
+        </TableView>
+    </center>
+
+    <!-- Bottom Section: Form and Buttons -->
+    <bottom>
+        <VBox spacing="10">
+            <HBox spacing="10">
+                <Label text="Student ID:" />
+                <ComboBox fx:id="studentComboBox" prefHeight="42.0" prefWidth="200" />
+                <Label text="Project ID:" />
+                <ComboBox fx:id="projectComboBox" prefHeight="39.0" prefWidth="200" />
+            </HBox>
+            <HBox spacing="10">
+                <Button onAction="#handleAddAssignment" text="Add Assignment" />
+                <Button onAction="#handleUpdateAssignment" text="Update Assignment" />
+                <Button onAction="#handleDeleteAssignment" text="Delete Assignment" />
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

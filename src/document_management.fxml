@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DocumentManagementController">
+    <children>
+        <Label layoutX="20.0" layoutY="20.0" text="Gestion des Documents Administratifs" />
+
+        <!-- Form for Adding Document -->
+        <Label layoutX="20.0" layoutY="60.0" text="Type:" />
+        <TextField fx:id="typeField" layoutX="100.0" layoutY="56.0" prefWidth="200.0" />
+
+        <Label layoutX="20.0" layoutY="100.0" text="Contenu:" />
+        <TextArea fx:id="contentArea" layoutX="100.0" layoutY="96.0" prefWidth="400.0" prefHeight="100.0" />
+
+        <Label layoutX="20.0" layoutY="220.0" text="Projet:" />
+        <ComboBox fx:id="projectComboBox" layoutX="100.0" layoutY="216.0" prefWidth="200.0" promptText="Sélectionner un projet" />
+
+        <Button fx:id="addDocumentButton" layoutX="100.0" layoutY="260.0" onAction="#handleAddDocument" text="Ajouter Document" />
+
+        <!-- Table for Viewing Documents -->
+        <TableView fx:id="documentTable" layoutX="20.0" layoutY="320.0" prefWidth="600.0" prefHeight="200.0">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="100.0" />
+                <TableColumn fx:id="typeColumn" text="Type" prefWidth="150.0" />
+                <TableColumn fx:id="dateColumn" text="Date" prefWidth="150.0" />
+                <TableColumn fx:id="projectColumn" text="Projet" prefWidth="200.0" />
+            </columns>
+        </TableView>
+
+        <!-- Export Button -->
+        <Button fx:id="exportPdfButton" layoutX="500.0" layoutY="260.0" onAction="#handleExportToPdf" text="Exporter en PDF" />
+    </children>
+</AnchorPane>

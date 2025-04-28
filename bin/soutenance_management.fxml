@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane stylesheets="@styles/soutenance_management.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SoutenanceManagementController">
+    <!-- Left Filter Section -->
+    <left>
+        <AnchorPane prefWidth="300" style="-fx-background-color: #413a6e; -fx-padding: 20;">
+            <children>
+                <Label layoutX="20.0" layoutY="20.0" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" text="Filtrer :" />
+                <TextField fx:id="filterIdField" layoutX="20.0" layoutY="60.0" promptText="ID Soutenance" />
+                <TextField fx:id="filterStudentField" layoutX="20.0" layoutY="100.0" promptText="Etudiant" />
+                <TextField fx:id="filterProjectField" layoutX="20.0" layoutY="140.0" promptText="Projet" />
+                <TextField fx:id="filterJuryField" layoutX="20.0" layoutY="180.0" promptText="Jury" />
+                <TextField fx:id="filterSalleField" layoutX="20.0" layoutY="220.0" promptText="Salle" />
+                <TextField fx:id="filterDateField" layoutX="20.0" layoutY="260.0" promptText="Date (yyyy-MM-dd)" />
+                <ComboBox fx:id="filterEncadrantComboBox" layoutX="20.0" layoutY="300.0" prefHeight="30.0" prefWidth="200.0" promptText="Encadrant" />
+                <Button layoutX="20.0" layoutY="340.0" onAction="#clearFilters" prefHeight="30.0" prefWidth="129.0" style="-fx-background-color: #373160; -fx-text-fill: white;" text="Annuler" />
+            </children>
+        </AnchorPane>
+    </left>
+
+    <!-- Center Table Section -->
+    <center>
+        <AnchorPane prefHeight="562.0" prefWidth="889.0" style="-fx-padding: 20;">
+            <children>
+                <TableView fx:id="soutenanceTable" layoutX="20.0" layoutY="20.0" prefHeight="278.0" prefWidth="886.0">
+                    <columns>
+                        <TableColumn fx:id="idColumn" text="ID" />
+                        <TableColumn fx:id="studentColumn" text="Etudiant" />
+                        <TableColumn fx:id="juryColumn" text="Jury" />
+                        <TableColumn fx:id="projectColumn" text="Projet" />
+                        <TableColumn fx:id="salleColumn" text="Salle" />
+                        <TableColumn fx:id="dateColumn" text="Date" />
+                        <TableColumn fx:id="supervisorColumn" text="Encadrant" /> <!-- New Column -->
+                        <TableColumn fx:id="actionsColumn" text="Actions" />
+                    </columns>
+                </TableView>
+                  <ComboBox fx:id="studentComboBox" layoutX="14.0" layoutY="320.0" prefHeight="38.0" prefWidth="134.0" promptText="Etudiant" />
+                  <ComboBox fx:id="juryComboBox" layoutX="434.0" layoutY="320.0" prefHeight="38.0" prefWidth="118.0" promptText="Jury" />
+                  <ComboBox fx:id="projectComboBox" layoutX="226.0" layoutY="320.0" prefHeight="38.0" prefWidth="108.0" promptText="Projet" />
+                  <ComboBox fx:id="encadrantComboBox" layoutX="641.0" layoutY="320.0" prefHeight="38.0" prefWidth="150.0" promptText="Encadrant" />
+                  <TextField fx:id="salleField" layoutX="20.0" layoutY="399.0" prefWidth="100.0" promptText="Salle" />
+                  <TextField fx:id="dateField" layoutX="273.0" layoutY="399.0" prefWidth="120.0" promptText="Date (yyyy-MM-dd HH:mm:ss)" />
+                  <Button fx:id="cancelUpdateButton" layoutX="199.0" layoutY="448.0" prefHeight="33.0" prefWidth="130.0" text="Annuler" visible="false" />
+                  <Button fx:id="updateSoutenanceButton" layoutX="20.0" layoutY="449.0" prefHeight="32.0" prefWidth="148.0" text="Mettre a jour" visible="false" />
+                  <Button fx:id="addSoutenanceButton" layoutX="20.0" layoutY="494.0" prefWidth="150.0" text="Ajouter" />
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

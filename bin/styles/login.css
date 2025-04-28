@@ -1,0 +1,31 @@
+/* Background Styling */
+#backgroundPane {
+    -fx-background-color: #b2acdb;
+}
+
+
+
+/* Input Fields Styling */
+#inputField, #passwordField {
+    -fx-pref-height: 40px;
+    -fx-background-color: transparent;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 0 1 0;
+    -fx-font-size: 20px;
+    -fx-padding: 5 10 5 30;
+}
+
+
+
+
+/* Login Button Styling */
+#loginButton {
+    -fx-pref-width: 150px;
+    -fx-pref-height: 40px;
+    -fx-background-color: #373160;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+

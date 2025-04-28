@@ -1,0 +1,70 @@
+/* Background Styling */
+VBox {
+    -fx-background-color: #b2acdb; /* Light purple background */
+}
+
+/* Label Styling */
+Label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #373160; /* Dark purple text */
+}
+
+Label:first-of-type {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #373160; /* Dark purple text for the title */
+}
+
+/* TextField Styling */
+TextField {
+    -fx-pref-width: 200px;
+    -fx-pref-height: 30px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+TextField:focused {
+    -fx-background-color: #544c85; /* Light purple background when focused */
+}
+
+/* ComboBox Styling */
+ComboBox {
+    -fx-pref-width: 200px;
+    -fx-pref-height: 30px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+ComboBox:focused {
+    -fx-background-color: #544c85; /* Light purple background when focused */
+}
+
+/* RadioButton Styling */
+RadioButton {
+    -fx-font-size: 14px;
+    -fx-text-fill: #373160; /* Dark purple text */
+}
+
+RadioButton:focused {
+    -fx-text-fill: #544c85; /* Light purple text when focused */
+}
+
+/* Button Styling */
+Button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10;
+    -fx-background-color: #373160; /* Dark purple background */
+    -fx-text-fill: white; /* White text color */
+}
+
+Button:hover {
+    -fx-background-color: #5a5190; /* Slightly lighter purple on hover */
+}

@@ -1,0 +1,140 @@
+/* Background Styling */
+AnchorPane {
+    -fx-background-color: #b2acdb; /* Light purple background */
+}
+
+/* Left Filter Section Styling */
+#filterPane {
+    -fx-background-color: #373160; /* Dark purple background */
+    -fx-padding: 20;
+}
+
+#filterLabel {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff; /* White text for labels */
+}
+
+#filterPane > TextField {
+    -fx-pref-width: 250px;
+    -fx-pref-height: 30px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+#filterPane > TextField:focused {
+    -fx-background-color: #544c85; /* Light purple background when focused */
+    -fx-border-color: #373160; /* Dark purple border when focused */
+}
+
+/* Style for ComboBox inside the filter */
+#filterPane > ComboBox {
+    -fx-pref-width: 250px;
+    -fx-pref-height: 30px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+#filterPane > ComboBox:focused {
+    -fx-border-color: #373160; /* Dark purple border when focused */
+}
+
+/* Style for Buttons inside the filter */
+#filterPane > Button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10;
+    -fx-background-color: #373160; /* Dark purple background for buttons */
+    -fx-text-fill: white; /* White text color */
+}
+
+#filterPane > Button:hover {
+    -fx-background-color: #544c85; /* Slightly lighter purple on hover */
+}
+
+/* Center Table Section Styling */
+#tablePane {
+    -fx-padding: 20;
+}
+
+TableView {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 10;
+}
+
+TableColumn {
+    -fx-alignment: center-left;
+    -fx-font-size: 14px;
+    -fx-text-fill: #373160; /* Dark purple text */
+}
+
+/* Input Fields and Buttons Styling */
+AnchorPane > TextField {
+    -fx-pref-width: 200px;
+    -fx-pref-height: 30px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+AnchorPane > TextField:focused {
+    -fx-background-color: #544c85; /* Light purple background when focused */
+    -fx-border-color: #373160; /* Dark purple border when focused */
+}
+
+AnchorPane > ComboBox {
+
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-padding: 5;
+}
+
+AnchorPane > ComboBox:focused {
+    -fx-border-color: #373160; /* Dark purple border when focused */
+}
+
+AnchorPane > Button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10;
+    -fx-background-color: #373160; /* Dark purple background */
+    -fx-text-fill: white; /* White text color */
+}
+
+AnchorPane > Button:hover {
+    -fx-background-color: #544c85; /* Slightly lighter purple on hover */
+}
+
+/* Style for Buttons inside the Action Column */
+.table-row-cell Button {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 3 8;
+    -fx-background-color: #373160; /* Dark purple background for action buttons */
+    -fx-text-fill: white; /* White text color */
+}
+
+.table-row-cell Button:hover {
+    -fx-background-color: #544c85; /* Slightly lighter purple on hover */
+}
+
+.table-row-cell Button.delete {
+    -fx-background-color: #373160; /* Dark purple background for delete buttons */
+}
+
+.table-row-cell Button.delete:hover {
+    -fx-background-color: #544c85; /* Slightly lighter purple on hover */
+}

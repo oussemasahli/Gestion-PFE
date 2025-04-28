@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="rootLayout" prefHeight="605.0" prefWidth="1384.0" stylesheets="styles/main.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
+    <!-- Top Section with Hamburger Menu -->
+    <top>
+        <AnchorPane prefHeight="31.0" prefWidth="1447.0">
+         <children>
+                <Button fx:id="hamburgerMenuButton" layoutX="265.0" layoutY="5.0" onAction="#toggleNavigationPane" text="☰" />
+         </children>
+        </AnchorPane>
+    </top>
+
+    <!-- Left Navigation Menu -->
+    <left>
+        <AnchorPane fx:id="navigationPane" managed="true" prefHeight="403.0" prefWidth="306.0" visible="true">
+            <children>
+                <Label fx:id="navigationLabel" layoutX="20.0" layoutY="6.0" text="Navigation" />
+                <Button fx:id="acceuilButton" layoutX="12.0" layoutY="58.0" onAction="#showAcceuil" prefHeight="26.0" prefWidth="280.0" text="Accueil" />
+                <Button fx:id="studentManagementButton" layoutX="12.0" layoutY="103.0" onAction="#showStudentManagement" prefHeight="26.0" prefWidth="278.0" text="Gestion des etudiants" />
+                <Button fx:id="juryManagementButton" layoutX="12.0" layoutY="147.0" onAction="#showJuryManagement" prefHeight="26.0" prefWidth="279.0" text="Gestion des Jurys" />
+                <Button fx:id="soutenanceManagementButton" layoutX="11.0" layoutY="192.0" onAction="#showSoutenanceManagement" prefHeight="26.0" prefWidth="279.0" text="Gestion des PFEs" />
+                <Button fx:id="projetManagementButton" layoutX="11.0" layoutY="239.0" onAction="#showProjetManagement" prefHeight="26.0" prefWidth="277.0" text="Gestion des Projets" />
+                <Button fx:id="assignmentManagementButton" layoutX="11.0" layoutY="332.0" onAction="#showAssignmentManagement" prefHeight="26.0" prefWidth="277.0" text="Gestion des Assignations" />
+                <Button fx:id="encadrantManagementButton" layoutX="11.0" layoutY="286.0" onAction="#showEncadrantManagement" prefHeight="26.0" prefWidth="277.0" text="Gestion des Encadrants" />
+                <Button fx:id="documentManagementButton" layoutX="11.0" layoutY="380.0" onAction="#showDocumentManagement" prefHeight="26.0" prefWidth="277.0" text="Gestion des Documents" />
+            </children>
+        </AnchorPane>
+    </left>
+
+    <!-- Main Content Area -->
+    <center>
+        <!-- The center content will be dynamically replaced -->
+    </center>
+</BorderPane>

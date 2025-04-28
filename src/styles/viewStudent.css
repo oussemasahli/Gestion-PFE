@@ -1,0 +1,136 @@
+/* Background Styling */
+#genderBox {
+    -fx-background-color: transparent; /* Remove any background color */
+    -fx-border-color: transparent; /* Remove any border color */
+    -fx-padding: 0; /* Optional: Adjust padding if needed */
+}
+AnchorPane {
+    -fx-background-color: #b2acdb; /* Light purple background */
+}
+
+/* Left Filter Section Styling */
+#filterPane {
+    -fx-background-color: #373160;
+    -fx-padding: 20;
+}
+
+/* Title Label Styling */
+#filterLabel {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #b2acdb;
+    -fx-padding: 10;
+}
+
+#maleRadio,#femaleRadio, #formationLabel {
+    -fx-font-weight: bold;
+    -fx-text-fill: #b2acdb;
+}
+
+TextField {
+    -fx-pref-width: 200px;
+    -fx-pref-height: 30px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+TextField:focused {
+    -fx-background-color: #544c85; /* Light purple background when focused */
+}
+
+/* ComboBox Styling */
+ComboBox {
+    -fx-pref-width: 200px;
+    -fx-pref-height: 30px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+ComboBox:focused {
+    -fx-background-color: #544c85; /* Light purple background when focused */
+}
+
+/* Button Styling */
+Button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10;
+    -fx-background-color: #373160; /* Dark purple background */
+    -fx-text-fill: white; /* White text color */
+}
+
+Button:hover {
+    -fx-background-color: #5a5190; /* Slightly lighter purple on hover */
+}
+
+/* Specific Button Styling */
+#clearFiltersButton {
+    -fx-background-color: #373160; /* Dark purple background */
+    -fx-text-fill: white;
+}
+
+#clearFiltersButton:hover {
+    -fx-background-color: #413a6e; /* Slightly darker purple on hover */
+}
+
+#backButton {
+    -fx-background-color: #373160; /* Dark purple background */
+    -fx-text-fill: white;
+}
+
+#backButton:hover {
+    -fx-background-color: #413a6e; /* Slightly darker purple on hover */
+}
+
+#viewNotesButton {
+    -fx-background-color: #373160; /* Dark purple background */
+    -fx-text-fill: white;
+}
+
+#viewNotesButton:hover {
+    -fx-background-color: #413a6e; /* Slightly darker purple on hover */
+}
+
+#modifyButton {
+    -fx-background-color: #373160; /* Dark purple background */
+    -fx-text-fill: white;
+}
+
+#modifyButton:hover {
+    -fx-background-color: #413a6e; /* Slightly darker purple on hover */
+}
+
+/* Center Table Section Styling */
+#tablePane {
+    -fx-padding: 20;
+}
+
+/* TableView Styling */
+TableView {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 10;
+}
+
+TableColumn {
+    -fx-alignment: center-left;
+    -fx-font-size: 14px;
+}
+
+/* RadioButton Styling */
+RadioButton {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+RadioButton:focused {
+    -fx-text-fill: #544c85; /* Light purple text when focused */
+}
+

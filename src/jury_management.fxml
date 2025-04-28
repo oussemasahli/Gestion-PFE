@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="616.0" prefWidth="753.0" stylesheets="styles/jury_management.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JuryManagementController">
+    <children>
+        <!-- Title Section -->
+        <Label fx:id="titleLabel" layoutX="10.0" layoutY="10.0" text="Jury Management" />
+
+        <!-- Jury Table -->
+        <TableView fx:id="juryTable" layoutX="11.0" layoutY="50.0" prefHeight="212.0" prefWidth="195.0">
+            <columns>
+                <TableColumn fx:id="juryIdColumn" text="Jury ID" />
+                <TableColumn fx:id="juryNameColumn" prefWidth="93.60004425048828" text="Jury Name" />
+            </columns>
+        </TableView>
+
+        <!-- Jury Input Fields -->
+        <Label layoutX="227.0" layoutY="50.0" text="Jury ID:" />
+        <TextField fx:id="juryIdField" layoutX="290.0" layoutY="46.0" promptText="Enter Jury ID" />
+        <Label layoutX="217.0" layoutY="96.0" text="Nom Jury :" />
+        <TextField fx:id="juryNameField" layoutX="290.0" layoutY="92.0" promptText="Enter Jury Name" />
+
+        <!-- Jury Buttons -->
+        <Button fx:id="addJuryButton" layoutX="216.0" layoutY="137.0" onAction="#handleAddJury" prefHeight="26.0" prefWidth="170.0" text="Ajouter Jury" />
+        <Button fx:id="updateJuryButton" layoutX="216.0" layoutY="183.0" onAction="#handleUpdateJury" prefHeight="26.0" prefWidth="170.0" text="Modifier Jury" />
+        <Button fx:id="viewMembersButton" layoutX="215.0" layoutY="236.0" onAction="#handleViewMembers" prefHeight="26.0" prefWidth="170.0" text="Voir Members" />
+
+        <!-- Jury Members Section -->
+        <Label layoutX="20.0" layoutY="290.0" text="Jury Members" />
+        <TableView fx:id="memberTable" layoutX="20.0" layoutY="318.0" prefHeight="150.0" prefWidth="400.0">
+            <columns>
+                <TableColumn fx:id="memberIdColumn" prefWidth="100.0" text="Encadrant ID" />
+                <TableColumn fx:id="memberNameColumn" prefWidth="150.0" text="Encadrant Name" />
+                <TableColumn fx:id="memberRoleColumn" prefWidth="150.0" text="Role" />
+            </columns>
+        </TableView>
+
+        <!-- Member Input Fields -->
+        <Label layoutX="433.0" layoutY="327.0" text="Encadrant:" />
+        <ComboBox fx:id="encadrantComboBox" layoutX="556.0" layoutY="323.0" prefWidth="170.0" promptText="Select Encadrant" />
+
+        <Label layoutX="433.0" layoutY="367.0" text="Role:" />
+        <ComboBox fx:id="roleComboBox" layoutX="556.0" layoutY="363.0" prefWidth="170.0" promptText="Select Role" />
+
+        <Button fx:id="addMemberFromFieldsButton" layoutX="433.0" layoutY="403.0" onAction="#handleAddMemberFromFields" prefHeight="26.0" prefWidth="133.0" text="Ajouter Member" />
+        <Button fx:id="removeMemberButton" layoutX="577.0" layoutY="403.0" onAction="#handleRemoveMember" prefHeight="26.0" prefWidth="170.0" text="Supprimer Member" />
+
+        <ImageView fitHeight="259.0" fitWidth="262.0" layoutX="500.0" layoutY="34.0">
+            <image>
+                <Image url="@styles/image-removebg-preview%20(3).png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>

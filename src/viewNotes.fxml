@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewNotesController">
+    <top>
+        <Label text="Notes de l'etudiant" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-padding: 10;" />
+    </top>
+    <center>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <TableView fx:id="notesTable" style="-fx-background-color: #ffffff;">
+                <columns>
+                    <TableColumn text="Project ID" fx:id="projectIdColumn" />
+                    <TableColumn text="Travail" fx:id="noteTravailColumn" />
+                    <TableColumn text="Rapport" fx:id="noteRapportColumn" />
+                    <TableColumn text="Presentation" fx:id="notePresentationColumn" />
+                    <TableColumn text="Appreciation" fx:id="appreciationColumn" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+    <bottom>
+        <VBox spacing="10" style="-fx-padding: 10;">
+            <HBox spacing="10">
+                <Label text="Project:" />
+                <ComboBox fx:id="projectComboBox" promptText="Select Project" />
+                <Label text="Jury:" />
+                <ComboBox fx:id="juryComboBox" promptText="Select Jury" />
+            </HBox>
+            <HBox spacing="10">
+                <Label text="Travail:" />
+                <TextField fx:id="noteTravailField" promptText="Enter Travail Note" />
+                <Label text="Rapport:" />
+                <TextField fx:id="noteRapportField" promptText="Enter Rapport Note" />
+                <Label text="Presentation:" />
+                <TextField fx:id="notePresentationField" promptText="Enter Presentation Note" />
+            </HBox>
+            <HBox spacing="10">
+                <Label text="Appreciation:" />
+                <TextField fx:id="appreciationField" promptText="Enter Appreciation" />
+            </HBox>
+            <HBox spacing="10">
+                <Button text="Add Note" onAction="#handleAddNote" style="-fx-background-color: #4caf50; -fx-text-fill: white;" />
+                <Button text="Modify Note" onAction="#handleModifyNote" style="-fx-background-color: #ffa500; -fx-text-fill: white;" />
+                <Button text="Retour" onAction="#handleBack" style="-fx-background-color: #4a90e2; -fx-text-fill: white;" />
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

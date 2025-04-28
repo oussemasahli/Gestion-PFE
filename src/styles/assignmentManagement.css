@@ -1,0 +1,62 @@
+/* Background Styling */
+VBox {
+    -fx-background-color: #b2acdb; /* Light purple background */
+    -fx-spacing: 15; /* Space between children */
+    -fx-padding: 20; /* Padding inside the VBox */
+}
+
+/* Title Label Styling */
+Label {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #373160; /* Dark purple text */
+    -fx-padding: 10;
+}
+
+/* TableView Styling */
+TableView {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 10;
+}
+
+TableColumn {
+    -fx-alignment: center-left;
+    -fx-font-size: 14px;
+}
+
+/* TextField Styling */
+TextField {
+    -fx-pref-width: 200px;
+    -fx-pref-height: 30px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+TextField:focused {
+    -fx-background-color: #544c85; /* Light purple background when focused */
+}
+
+/* Button Styling */
+Button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10;
+    -fx-background-color: #373160; /* Dark purple background */
+    -fx-text-fill: white; /* White text color */
+}
+
+Button:hover {
+    -fx-background-color: #5a5190; /* Slightly lighter purple on hover */
+}
+
+/* HBox Styling */
+HBox {
+    -fx-spacing: 10; /* Space between children */
+    -fx-padding: 10; /* Padding inside the HBox */
+}

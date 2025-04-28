@@ -1,0 +1,46 @@
+/* Navigation Pane Styling */
+#navigationPane {
+    -fx-background-color: #f0f0f0;
+    -fx-padding: 10;
+}
+
+/* Navigation Label Styling */
+#navigationLabel {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-padding: 10 0 20 0;
+}
+
+/* Styling for Buttons in the Navigation Pane */
+#navigationPane Button {
+    -fx-background-color: transparent; /* Remove button background */
+    -fx-text-fill: #333333; /* Dark text color */
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-alignment: center-left; /* Align text to the left */
+    -fx-padding: 10 20; /* Add padding for spacing */
+    -fx-border: none; /* Remove border */
+    -fx-cursor: hand; /* Change cursor to hand on hover */
+}
+
+/* Hover Effect for Buttons in the Navigation Pane */
+#navigationPane Button:hover {
+    -fx-background-color: #e0e0e0; /* Light gray background on hover */
+    -fx-text-fill: #4a90e2; /* Blue text color on hover */
+}
+
+/* Active Button Styling in the Navigation Pane */
+#navigationPane Button:focused {
+    -fx-background-color: #d0d0d0; /* Slightly darker gray for active state */
+    -fx-text-fill: #4a90e2; /* Blue text color for active state */
+}
+
+/* Hamburger Menu Button Styling */
+#hamburgerMenuButton {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-background-color: transparent;
+    -fx-border: none;
+    -fx-cursor: hand;
+}
