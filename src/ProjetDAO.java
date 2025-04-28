@@ -76,7 +76,7 @@ public class ProjetDAO {
             pstmt.setString(1, projectId);
             int rowsAffected = pstmt.executeUpdate();
             if (rowsAffected == 0) {
-                throw new SQLException("Aucun projet trouvé avec l'ID : " + projectId);
+                throw new SQLException("Aucun projet trouve avec l'ID : " + projectId);
             }
         }
     }

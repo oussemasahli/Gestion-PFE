@@ -41,7 +41,7 @@
             <RowConstraints />
          </rowConstraints>
         </GridPane>
-      <Text fill="WHITE" layoutX="111.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue sur notre plateforme dédiée à la gestion des Projets de Fin d'Études (PFE) !Conçue pour simplifier et structurer la gestion des projets, cette application offre aux étudiants, encadrants et administrateurs tous les outils indispensables. Vous pourrez suivre l'avancement des stages, organiser les soutenances et accéder rapidement aux informations essentielles, le tout dans un espace clair et intuitif" textAlignment="CENTER" wrappingWidth="710.1367416381836">
+      <Text fill="WHITE" layoutX="111.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue sur notre plateforme dediee à la gestion des Projets de Fin d'etudes (PFE) !Conçue pour simplifier et structurer la gestion des projets, cette application offre aux etudiants, encadrants et administrateurs tous les outils indispensables. Vous pourrez suivre l'avancement des stages, organiser les soutenances et acceder rapidement aux informations essentielles, le tout dans un espace clair et intuitif" textAlignment="CENTER" wrappingWidth="710.1367416381836">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

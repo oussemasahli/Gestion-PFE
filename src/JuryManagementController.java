@@ -45,7 +45,7 @@ public class JuryManagementController {
         // Bind the columns to the Encadrant properties
         memberIdColumn.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getId()));
         memberNameColumn.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getNom()));
-        memberRoleColumn.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getRole())); // Bind role
+        memberRoleColumn.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getRole()));
 
         // Load juries into the table
         loadJuries();
@@ -55,6 +55,47 @@ public class JuryManagementController {
 
         // Populate the roleComboBox with roles
         roleComboBox.setItems(FXCollections.observableArrayList("President", "Examinateur", "Rapporteur"));
+
+        // Add a listener to populate the ComboBoxes when a member is selected
+        memberTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            populateMemberFields(newValue);
+        });
+
+        // Add a listener to populate the Jury Name field when a jury is selected
+        juryTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            populateJuryFields(newValue);
+        });
+    }
+
+    private void populateMemberFields(Encadrant member) {
+        if (member != null) {
+            // Populate the encadrantComboBox with the selected member
+            for (Encadrant encadrant : encadrantComboBox.getItems()) {
+                if (encadrant.getId().equals(member.getId())) {
+                    encadrantComboBox.setValue(encadrant);
+                    break;
+                }
+            }
+
+            // Populate the roleComboBox with the member's role
+            roleComboBox.setValue(member.getRole());
+        } else {
+            // Clear the ComboBoxes if no member is selected
+            encadrantComboBox.setValue(null);
+            roleComboBox.setValue(null);
+        }
+    }
+
+    private void populateJuryFields(Jury jury) {
+        if (jury != null) {
+            // Populate the Jury ID and Name fields
+            juryIdField.setText(jury.getId());
+            juryNameField.setText(jury.getName());
+        } else {
+            // Clear the fields if no jury is selected
+            juryIdField.clear();
+            juryNameField.clear();
+        }
     }
 
     private void loadJuries() {
@@ -72,7 +113,8 @@ public class JuryManagementController {
 
     private void loadEncadrants() {
         try {
-            List<Encadrant> encadrants = EncadrantDAO.getAllEncadrants(); // Fetch all encadrants
+            // Fetch all encadrants from the database
+            List<Encadrant> encadrants = EncadrantDAO.getAllEncadrants();
             ObservableList<Encadrant> encadrantList = FXCollections.observableArrayList(encadrants);
 
             // Set the items in the ComboBox
@@ -146,29 +188,31 @@ public class JuryManagementController {
     @FXML
     private void handleUpdateJury() {
         try {
+            // Get the selected jury from the table
             Jury selectedJury = juryTable.getSelectionModel().getSelectedItem();
             if (selectedJury == null) {
-                showError("No Selection", "Please select a jury to update.");
+                showError("No Selection", "Veuillez sélectionner un jury à modifier.");
                 return;
             }
 
-            String juryName = juryNameField.getText().trim();
-            if (juryName.isEmpty()) {
-                showError("Invalid Input", "Jury name is required.");
+            // Get the updated jury name from the input field
+            String updatedJuryName = juryNameField.getText().trim();
+            if (updatedJuryName.isEmpty()) {
+                showError("Invalid Input", "Le nom du jury est requis.");
                 return;
             }
 
             // Update the selected jury's name
-            selectedJury.setName(juryName);
+            selectedJury.setName(updatedJuryName);
 
-            // Call the update method in JuryDAO
+            // Update the jury in the database
             JuryDAO.updateJury(selectedJury);
 
             // Reload the table to reflect changes
             loadJuries();
-            showSuccess("Jury updated successfully!");
+            showSuccess("Jury modifié avec succès !");
         } catch (SQLException e) {
-            showError("Error", "Failed to update jury: " + e.getMessage());
+            showError("Erreur", "Impossible de modifier le jury : " + e.getMessage());
         }
     }
 
@@ -294,6 +338,74 @@ public class JuryManagementController {
             showSuccess("Member added successfully as " + role + "!");
         } catch (SQLException e) {
             showError("Error", "Failed to add member: " + e.getMessage());
+        }
+    }
+
+    @FXML
+    private void handleModifyMember() {
+        try {
+            // Get the selected member from the member table
+            Encadrant selectedMember = memberTable.getSelectionModel().getSelectedItem();
+            if (selectedMember == null) {
+                showError("No Selection", "Veuillez sélectionner un membre à modifier.");
+                return;
+            }
+
+            // Get the selected jury from the jury table
+            Jury selectedJury = juryTable.getSelectionModel().getSelectedItem();
+            if (selectedJury == null) {
+                showError("No Jury Selected", "Veuillez sélectionner un jury.");
+                return;
+            }
+
+            // Get the updated role from the roleComboBox
+            String updatedRole = roleComboBox.getValue();
+            if (updatedRole == null || updatedRole.isEmpty()) {
+                showError("Invalid Input", "Veuillez sélectionner un rôle pour le membre.");
+                return;
+            }
+
+            // Update the member's role in the database
+            JuryDAO.updateJuryMemberRole(selectedJury.getId(), selectedMember.getId(), updatedRole);
+
+            // Update the member's role in the table
+            selectedMember.setRole(updatedRole);
+            memberTable.refresh();
+
+            showSuccess("Rôle du membre modifié avec succès !");
+        } catch (SQLException e) {
+            showError("Erreur", "Impossible de modifier le rôle du membre : " + e.getMessage());
+        }
+    }
+
+    @FXML
+    private void handleDeleteJury() {
+        try {
+            // Get the selected jury from the table
+            Jury selectedJury = juryTable.getSelectionModel().getSelectedItem();
+            if (selectedJury == null) {
+                showError("No Selection", "Veuillez sélectionner un jury à supprimer.");
+                return;
+            }
+
+            // Confirm deletion
+            Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
+            confirmationAlert.setTitle("Confirmation");
+            confirmationAlert.setHeaderText("Supprimer le jury");
+            confirmationAlert.setContentText("Êtes-vous sûr de vouloir supprimer le jury : " + selectedJury.getName() + " ?");
+            Optional<ButtonType> result = confirmationAlert.showAndWait();
+
+            if (result.isPresent() && result.get() == ButtonType.OK) {
+                // Delete the jury from the database
+                JuryDAO.deleteJury(selectedJury.getId());
+
+                // Remove the jury from the table
+                juryList.remove(selectedJury);
+
+                showSuccess("Jury supprimé avec succès !");
+            }
+        } catch (SQLException e) {
+            showError("Erreur", "Impossible de supprimer le jury : " + e.getMessage());
         }
     }
 

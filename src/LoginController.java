@@ -44,5 +44,28 @@ public class LoginController {
             errorLabel.setVisible(true);
         }
     }
+
+    @FXML
+    private void handleSignUpNavigation() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("sign_up.fxml"));
+            Parent signUpRoot = loader.load();
+
+            Stage stage = (Stage) inputField.getScene().getWindow();
+            stage.setScene(new Scene(signUpRoot));
+            stage.setTitle("Creer un compte");
+        } catch (Exception e) {
+            e.printStackTrace();
+            showError("Erreur", "Impossible de charger la page d'inscription.");
+        }
+    }
+
+    private void showError(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
 }
 

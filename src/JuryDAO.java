@@ -149,4 +149,38 @@ public class JuryDAO {
             System.out.println("Jury updated successfully: " + jury.getId());
         }
     }
+
+    // Mettre a jour le role d'un membre du jury
+    public static void updateJuryMemberRole(String juryId, String encadrantId, String newRole) throws SQLException {
+        String sql = "UPDATE jury_members SET role = ? WHERE jury_id = ? AND encadrant_id = ?";
+        try (Connection conn = DatabaseHelper.connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, newRole);
+            pstmt.setString(2, juryId);
+            pstmt.setString(3, encadrantId);
+            pstmt.executeUpdate();
+            System.out.println("Role updated for Encadrant ID " + encadrantId + " in Jury ID " + juryId + " to " + newRole);
+        }
+    }
+
+    // Supprimer un jury
+    public static void deleteJury(String juryId) throws SQLException {
+        // First, delete all members of the jury
+        String deleteMembersSql = "DELETE FROM jury_members WHERE jury_id = ?";
+        try (Connection conn = DatabaseHelper.connect();
+             PreparedStatement pstmt = conn.prepareStatement(deleteMembersSql)) {
+            pstmt.setString(1, juryId);
+            pstmt.executeUpdate();
+            System.out.println("All members of jury " + juryId + " have been deleted.");
+        }
+
+        // Then, delete the jury itself
+        String deleteJurySql = "DELETE FROM juries WHERE id = ?";
+        try (Connection conn = DatabaseHelper.connect();
+             PreparedStatement pstmt = conn.prepareStatement(deleteJurySql)) {
+            pstmt.setString(1, juryId);
+            pstmt.executeUpdate();
+            System.out.println("Jury with ID " + juryId + " has been deleted.");
+        }
+    }
 }

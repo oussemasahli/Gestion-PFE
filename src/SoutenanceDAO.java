@@ -50,7 +50,7 @@ public class SoutenanceDAO {
             pstmt.setString(6, soutenance.getSalle()); // Salle
             pstmt.setString(7, soutenance.getEncadrant() != null ? soutenance.getEncadrant().getId() : null); // Foreign key for the supervisor
             pstmt.executeUpdate(); // Execute the insertion query
-            System.out.println("Soutenance ajoutee avec succès pour l'etudiant " + soutenance.getEtudiant().getId() +
+            System.out.println("Soutenance ajoutee avec succes pour l'etudiant " + soutenance.getEtudiant().getId() +
                                " et le jury " + soutenance.getJury().getId() + " avec le projet " + soutenance.getProjectId());
         }
     }
@@ -147,7 +147,7 @@ public class SoutenanceDAO {
             pstmt.setString(6, soutenance.getEncadrant() != null ? soutenance.getEncadrant().getId() : null); // Update supervisor ID
             pstmt.setString(7, soutenance.getId()); // Specify the soutenance ID
             pstmt.executeUpdate(); // Execute the update query
-            System.out.println("Soutenance mise à jour avec succès pour l'etudiant " + soutenance.getEtudiant().getId() +
+            System.out.println("Soutenance mise à jour avec succes pour l'etudiant " + soutenance.getEtudiant().getId() +
                                " et le jury " + soutenance.getJury().getId() + " avec le projet " + soutenance.getProjectId());
         }
     }

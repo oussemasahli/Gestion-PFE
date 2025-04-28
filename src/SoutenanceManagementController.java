@@ -310,7 +310,7 @@ public class SoutenanceManagementController {
             // Clear input fields
             resetInputFields();
 
-            showInfo("Soutenance ajoutee avec succès !");
+            showInfo("Soutenance ajoutee avec succes !");
         } catch (SQLException e) {
             showError("Erreur : " + e.getMessage());
         } catch (Exception e) {
@@ -408,7 +408,7 @@ public class SoutenanceManagementController {
                             .orElse(null);
 
                     if (encadrant == null) {
-                        showError("Aucun encadrant trouvé avec le nom : " + selectedEncadrantName);
+                        showError("Aucun encadrant trouve avec le nom : " + selectedEncadrantName);
                         return;
                     }
 
@@ -429,13 +429,13 @@ public class SoutenanceManagementController {
                     // Reset to add mode
                     resetToAddMode();
 
-                    showInfo("Soutenance mise à jour avec succès !");
+                    showInfo("Soutenance mise à jour avec succes !");
                 } catch (Exception e) {
                     showError("Erreur lors de la mise à jour de la soutenance : " + e.getMessage());
                 }
             });
         } catch (Exception e) {
-            showError("Erreur lors de la sélection de la soutenance : " + e.getMessage());
+            showError("Erreur lors de la selection de la soutenance : " + e.getMessage());
         }
     }
 

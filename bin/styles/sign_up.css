@@ -1,0 +1,35 @@
+/* Background Styling */
+AnchorPane {
+    -fx-background-color: #b2acdb; /* Light purple background */
+}
+
+/* Label Styling */
+Label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #373160; /* Dark purple text */
+}
+
+/* TextField and PasswordField Styling */
+TextField, PasswordField {
+    -fx-pref-height: 30px;
+    -fx-pref-width: 250px;
+    -fx-background-color: #ffffff; /* White background */
+    -fx-border-color: #cccccc; /* Light gray border */
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+}
+
+/* Button Styling */
+Button {
+    -fx-background-color: #373160; /* Dark purple background */
+    -fx-text-fill: white; /* White text */
+    -fx-font-weight: bold;
+    -fx-border-radius: 5px;
+    -fx-pref-height: 35px;
+    -fx-pref-width: 120px;
+}
+
+Button:hover {
+    -fx-background-color: #5a5190; /* Slightly lighter purple on hover */
+}
